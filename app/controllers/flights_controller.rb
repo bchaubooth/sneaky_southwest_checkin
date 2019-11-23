@@ -44,7 +44,7 @@ class FlightsController < ApplicationController
   def update_row
     @flight = Flight.find(params.fetch("id_to_modify"))
 
-    @flight.flier_id = params.fetch("flier_id")
+    
     @flight.departure = params.fetch("departure")
     @flight.destination = params.fetch("destination")
     @flight.fifteen_minute_reminder_sent = params.fetch("fifteen_minute_reminder_sent")

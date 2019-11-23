@@ -21,15 +21,9 @@
 <!-- Form flight end -->
 
   <!-- Label and input for flier_id start -->
-  <div class="form-group">
-    <label for="flier_id">
-      Flier
-    </label>
-
-    <!-- Input for flier_id start -->
-    <%= select_tag(:flier_id, options_from_collection_for_select(User.all, :id, :email, @flight.flier_id), :class => "form-control") %>
-    <!-- Input for flier_id end -->
-  </div>
+  <!-- Input for "flier_id" start -->
+  <input type="hidden" name="flier_id" value="<%= current_user.id %>">
+  <!-- Input for "flier_id" end -->
   <!-- Label and input for flier_id end -->
 
   <!-- Label and input for departure start -->
