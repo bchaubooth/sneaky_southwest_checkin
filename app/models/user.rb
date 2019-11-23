@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :flights,
+             :foreign_key => "flier_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
