@@ -1,0 +1,87 @@
+<!-- Validation failure messages -->
+<% if @flight.errors.any? %>
+  <% @flight.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit flight #<%= @flight.id %>
+</h1>
+
+<hr>
+
+<!-- Form flight start -->
+<form action="/update_flight/<%= @flight.id %>" method="post">
+<!-- Form flight end -->
+
+  <!-- Label and input for flier_id start -->
+  <div class="form-group">
+    <label for="flier_id">
+      Flier
+    </label>
+
+    <!-- Input for flier_id start -->
+    <input type="text" id="flier_id" name="flier_id" class="form-control" value="<%= @flight.flier_id %>">
+    <!-- Input for flier_id end -->
+  </div>
+  <!-- Label and input for flier_id end -->
+
+  <!-- Label and input for departure start -->
+  <div class="form-group">
+    <label for="departure">
+      Departure
+    </label>
+
+    <!-- Input for departure start -->
+    <input type="text" id="departure" name="departure" class="form-control" value="<%= @flight.departure %>">
+    <!-- Input for departure end -->
+  </div>
+  <!-- Label and input for departure end -->
+
+  <!-- Label and input for destination start -->
+  <div class="form-group">
+    <label for="destination">
+      Destination
+    </label>
+
+    <!-- Input for destination start -->
+    <input type="text" id="destination" name="destination" class="form-control" value="<%= @flight.destination %>">
+    <!-- Input for destination end -->
+  </div>
+  <!-- Label and input for destination end -->
+
+  <!-- Label and input for fifteen_minute_reminder_sent start -->
+  <div class="form-check">
+    <input type="hidden" value="0" name="fifteen_minute_reminder_sent">
+    <!-- Input for fifteen_minute_reminder_sent start -->
+    <input id="fifteen_minute_reminder_sent" class="form-check-input" name="fifteen_minute_reminder_sent" type="checkbox" value="1" <%= "checked" if @flight.fifteen_minute_reminder_sent %>>
+    <!-- Input for fifteen_minute_reminder_sent end -->
+    <label for="fifteen_minute_reminder_sent" class="form-check-label">
+      Fifteen minute reminder sent
+    </label>
+  </div>
+
+  <!-- Label and input for five_minute_reminder_sent start -->
+  <div class="form-check">
+    <input type="hidden" value="0" name="five_minute_reminder_sent">
+    <!-- Input for five_minute_reminder_sent start -->
+    <input id="five_minute_reminder_sent" class="form-check-input" name="five_minute_reminder_sent" type="checkbox" value="1" <%= "checked" if @flight.five_minute_reminder_sent %>>
+    <!-- Input for five_minute_reminder_sent end -->
+    <label for="five_minute_reminder_sent" class="form-check-label">
+      Five minute reminder sent
+    </label>
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update flight
+  </button>
+</form>
+
+<hr>
+
+<a href="/flights">
+  Go back
+</a>
