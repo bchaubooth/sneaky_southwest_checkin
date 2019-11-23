@@ -15,7 +15,7 @@
     </label>
 
     <!-- Input for flier_id start -->
-    <input type="text" id="flier_id" name="flier_id" class="form-control" value="<%= @flight.flier_id %>">
+    <%= select_tag(:flier_id, options_from_collection_for_select(User.all, :id, :email, @flight.flier_id), :class => "form-control") %>
     <!-- Input for flier_id end -->
   </div>
   <!-- Label and input for flier_id end -->
