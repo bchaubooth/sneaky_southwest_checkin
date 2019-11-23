@@ -38,7 +38,11 @@
       </dt>
       <!-- Display flier_id start -->
       <dd>
-        <%= @flight.flier_id %>
+        <% if @flight.flier.present? %>
+          <a href="/users/<%= @flight.flier_id %>">
+            <%= @flight.flier.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display flier_id end -->
 

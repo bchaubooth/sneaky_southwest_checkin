@@ -70,7 +70,11 @@
 
         <!-- Display flight.flier_id start -->
         <td>
-          <%= flight.flier.email %>
+          <% if flight.flier.present? %>
+            <a href="/users/<%= flight.flier.id %>">
+              <%= flight.flier.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display flight.flier_id end -->
 
