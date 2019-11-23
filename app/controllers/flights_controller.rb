@@ -59,6 +59,14 @@ class FlightsController < ApplicationController
     end
   end
 
+  def destroy_row_from_flier
+    @flight = Flight.find(params.fetch("id_to_remove"))
+
+    @flight.destroy
+
+    redirect_to("/users/#{@flight.flier_id}", notice: "Flight deleted successfully.")
+  end
+
   def destroy_row
     @flight = Flight.find(params.fetch("id_to_remove"))
 
