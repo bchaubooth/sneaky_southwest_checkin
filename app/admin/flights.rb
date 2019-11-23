@@ -1,4 +1,6 @@
 ActiveAdmin.register Flight do
+
+ permit_params :flier_id, :departure, :destination, :fifteen_minute_reminder_sent, :five_minute_reminder_sent
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
